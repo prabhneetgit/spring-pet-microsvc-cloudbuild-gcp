@@ -27,7 +27,7 @@ services:
      - discovery-server
     entrypoint: ["./dockerize","-wait=tcp://discovery-server:8761","-timeout=60s","--","java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
     ports:
-    - 8081:8081
+    - 8085:8085
 
   visits-service:
     image: prabhneetdocker/spring-petclinic-visits-service
