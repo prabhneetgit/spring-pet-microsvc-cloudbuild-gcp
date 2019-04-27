@@ -4,5 +4,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['tag', 'workspace_grafana-server:latest', 'gcr.io/$PROJECT_ID/workspace_grafana-server:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', 'workspace_prometheus-server:latest', 'gcr.io/$PROJECT_ID/workspace_prometheus-server:$COMMIT_SHA']  
-images: ['gcr.io/$PROJECT_ID/workspace_grafana-server:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/workspace_prometheus-server:$COMMIT_SHA']
+  args: ['tag', 'workspace_prometheus-server:latest', 'gcr.io/$PROJECT_ID/workspace_prometheus-server:$COMMIT_SHA']
+  args: ['tag', 'prabhneetdocker/spring-petclinic-hystrix-dashboard:latest', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-hystrix-dashboard:$COMMIT_SHA']  
+images: ['gcr.io/$PROJECT_ID/workspace_grafana-server:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/workspace_prometheus-server:$COMMIT_SHA', 
+         'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-hystrix-dashboard:$COMMIT_SHA']
