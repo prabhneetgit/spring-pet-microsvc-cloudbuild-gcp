@@ -6,6 +6,23 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['tag', 'workspace_prometheus-server:latest', 'gcr.io/$PROJECT_ID/workspace_prometheus-server:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', 'prabhneetdocker/spring-petclinic-hystrix-dashboard:latest', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-hystrix-dashboard:$COMMIT_SHA']  
+  args: ['tag', 'prabhneetdocker/spring-petclinic-hystrix-dashboard:latest', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-hystrix-dashboard:$COMMIT_SHA']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'prabhneetdocker/spring-petclinic-config-server:latest', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-config-server:$COMMIT_SHA']  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'prabhneetdocker/spring-petclinic-discovery-server:latest', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-discovery-server:$COMMIT_SHA']  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'prabhneetdocker/spring-petclinic-customers-service:latest', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-customers-service:$COMMIT_SHA']  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'prabhneetdocker/spring-petclinic-visits-service:latest', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-visits-service:$COMMIT_SHA']  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'prabhneetdocker/spring-petclinic-vets-service:latest', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-vets-service:$COMMIT_SHA']   
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'prabhneetdocker/spring-petclinic-api-gateway:latest', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-api-gateway:$COMMIT_SHA'] 
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'prabhneetdocker/spring-petclinic-admin-server:latest', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-admin-server:$COMMIT_SHA']  
 images: ['gcr.io/$PROJECT_ID/workspace_grafana-server:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/workspace_prometheus-server:$COMMIT_SHA', 
-         'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-hystrix-dashboard:$COMMIT_SHA']
+         'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-hystrix-dashboard:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-config-server:$COMMIT_SHA',
+         'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-discovery-server:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-customers-service:$COMMIT_SHA'
+         'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-visits-service:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-vets-service:$COMMIT_SHA'
+         'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-api-gateway:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/prabhneetdocker/spring-petclinic-admin-server:$COMMIT_SHA']
