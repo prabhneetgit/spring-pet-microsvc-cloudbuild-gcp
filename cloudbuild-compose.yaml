@@ -2,5 +2,22 @@ steps:
 - name: 'docker/compose:1.19.0'
   args: ['up', '-d']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', '$REPO_NAME:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
-images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'grafana-server:latest', 'gcr.io/$PROJECT_ID/grafana-server:$COMMIT_SHA']
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'tracing-server:latest', 'gcr.io/$PROJECT_ID/tracing-server:$COMMIT_SHA']
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'visits-service:latest', 'gcr.io/$PROJECT_ID/visits-service:$COMMIT_SHA']
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'vets-service:latest', 'gcr.io/$PROJECT_ID/vets-service:$COMMIT_SHA']
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'hystrix-dashboard:latest', 'gcr.io/$PROJECT_ID/hystrix-dashboard:$COMMIT_SHA']
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'admin-server:latest', 'gcr.io/$PROJECT_ID/admin-server:$COMMIT_SHA']
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'customers-service:latest', 'gcr.io/$PROJECT_ID/customers-service:$COMMIT_SHA']
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'api-gateway:latest', 'gcr.io/$PROJECT_ID/api-gateway:$COMMIT_SHA']
+images: ['gcr.io/$PROJECT_ID/grafana-server:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/tracing-server:$COMMIT_SHA',
+         'gcr.io/$PROJECT_ID/visits-service:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/vets-service:$COMMIT_SHA',
+         'gcr.io/$PROJECT_ID/hystrix-dashboard:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/admin-server:$COMMIT_SHA',
+         'gcr.io/$PROJECT_ID/customers-service:$COMMIT_SHA', 'gcr.io/$PROJECT_ID/api-gateway:$COMMIT_SHA']
